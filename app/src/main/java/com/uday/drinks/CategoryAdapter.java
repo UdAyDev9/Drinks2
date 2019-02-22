@@ -35,7 +35,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewholder> {
     @Override
     public void onBindViewHolder(@NonNull CategoryViewholder holder, final int position) {
 
-        Picasso.with(context).load(categories.get(position).getLink()).into(holder.img_product);
+        Picasso.with(context).load(categories.get(position).getLink()).placeholder(R.drawable.img_loading_placeholder).into(holder.img_product);
         holder.text_menu_name.setText(categories.get(position).getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

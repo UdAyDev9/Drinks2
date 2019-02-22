@@ -1,26 +1,26 @@
 <resources>
-  <!--  <string name="app_name">Drinks</string>
+    <!--  <string name="app_name">Drinks</string>
     <string name="FACEBOOK_APP_ID">539280903220210</string>
 
     <string name="ACCOUNT_KIT_CLIENT_TOKEN">1768ad5e9813a816402aba06004a60ac</string>-->
 
-    <string name="app_name">Drinks</string>
-    <string name="FACEBOOK_APP_ID">609729276107201</string>
-    <string name="ACCOUNT_KIT_CLIENT_TOKEN">7f11174a7513c0d961728382bab37ee7</string>
+    <string name="app_name" translatable="false">Drinks</string>
+    <string name="FACEBOOK_APP_ID" translatable="false">609729276107201</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN" translatable="false">7f11174a7513c0d961728382bab37ee7</string>
 
-    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_home" translatable="false">HomeActivity</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
 
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 
-    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
 
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
 
-    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_header_desc" translatable="false">Navigation Header</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings" translatable="false">Settings</string>
 
     <!--<string name="app_name">DrinkShop</string>-->
 

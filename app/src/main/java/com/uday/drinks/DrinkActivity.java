@@ -51,7 +51,7 @@ public class DrinkActivity extends AppCompatActivity {
         Log.d("TAG", "onCreate: "+u.toString());
         String imgUrl= getIntent().getStringExtra("menu_drink_img");
         Log.d("TAG9", "onCreate: ImageUrl"  + imgUrl);
-        Picasso.with(DrinkActivity.this).load(imgUrl).into(drinkHeaderImg);
+        Picasso.with(DrinkActivity.this).load(imgUrl).placeholder(R.drawable.img_loading_placeholder).into(drinkHeaderImg);
         String menuDrinkName = getIntent().getStringExtra("menu_drink_name");
         drinkHeaderText.setText(menuDrinkName);
 
@@ -82,4 +82,5 @@ public class DrinkActivity extends AppCompatActivity {
         DrinkAdapter adapter=new DrinkAdapter(this,drinks);
         lst_drink.setAdapter(adapter);
     }
+
 }

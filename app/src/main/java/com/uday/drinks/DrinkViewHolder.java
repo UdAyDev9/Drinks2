@@ -2,16 +2,17 @@ package com.uday.drinks;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.uday.drinks.Interface.ItemClickListener;
 
 public class DrinkViewHolder  extends RecyclerView.ViewHolder  implements  View.OnClickListener {
+
     ImageView img_product;
     TextView txt_drink_name,txt_price;
-    Button btn_add_cart;
+    ImageButton imgBtnAddCart,imgBtnAddFav;
 
     ItemClickListener itemClickListener;
 
@@ -24,8 +25,9 @@ public class DrinkViewHolder  extends RecyclerView.ViewHolder  implements  View.
         img_product=(ImageView)itemView.findViewById(R.id.image_products);
         txt_drink_name=(TextView)itemView.findViewById(R.id.txt_drink_name);
         txt_price=(TextView)itemView.findViewById(R.id.txt_price);
-        btn_add_cart=(Button)itemView.findViewById(R.id.btn_add_cart);
-      itemView.setOnClickListener(this);
+        imgBtnAddCart =(ImageButton) itemView.findViewById(R.id.img_btn_add_cart);
+        imgBtnAddFav =(ImageButton) itemView.findViewById(R.id.img_btn_add_fav);
+        itemView.setOnClickListener(this);
     }
 
     @Override

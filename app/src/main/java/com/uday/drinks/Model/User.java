@@ -6,8 +6,17 @@ public class User {
     private String name;
     private String birthdate;
     private String error_msg; // it will empty if user returns object
+    private String profile;
 
     public User() {
+    }
+
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
     }
 
     public String getPhone() {

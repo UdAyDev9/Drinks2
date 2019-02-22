@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#a3b6ae</color>
     <color name="colorAccent">#1e1e1e</color>
     <color name="navBackGround">#55d4e7e1</color>
+    <color name="cartBg">#D87C4E</color>
 </resources>

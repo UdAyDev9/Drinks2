@@ -1,11 +1,15 @@
 package com.uday.drinks;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -34,6 +38,7 @@ import com.szagurskii.patternedtextwatcher.PatternedTextWatcher;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.Permission;
 
 import dmax.dialog.SpotsDialog;
 
@@ -44,17 +49,47 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private static  final int REQUEST_CODE=1000;
+    private static final int REQUEST_CODE_READ_STORAGE = 10000 ;
     Button btn_continue;
     IDrinkShopAPI mService;
     String mPhone = "+917 ";
 
     @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch (requestCode){
+
+            case REQUEST_CODE_READ_STORAGE:{
+                if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+
+                    Toast.makeText(MainActivity.this,"Read Storage Permission Granted",Toast.LENGTH_LONG).show();
+                }else {
+
+                    Toast.makeText(MainActivity.this,"Read Storage Permission Denied",Toast.LENGTH_LONG).show();
+
+                }
+
+            }
+            break;
+            default:break;
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)!=PackageManager.PERMISSION_GRANTED){
+
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},REQUEST_CODE_READ_STORAGE);
+        }
+
+
         mService= Common.getAPI();
 
-       printKeyHash();
+        printKeyHash();
         btn_continue=(Button)findViewById(R.id.btn_contnue);
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         if(AccountKit.getCurrentAccessToken()!=null){
             final AlertDialog alertDialog=new SpotsDialog(MainActivity.this);
             alertDialog.show();
-            alertDialog.setMessage("Please waiting...");
+            alertDialog.setMessage("Please wait...");
             // Auto Login
             AccountKit.getCurrentAccount(new AccountKitCallback<Account>() {
                 @Override
@@ -92,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
                                                     @Override
                                                     public void onFailure(Call<User> call, Throwable t) {
+                                                        alertDialog.dismiss();
                                                         Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                                                     }
                                                 });
@@ -110,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 @Override
                                 public void onFailure(Call<CheckUserResponse> call, Throwable t) {
+                                    alertDialog.dismiss();
                                     Toast.makeText(MainActivity.this,"Please Check Your Network Connection",Toast.LENGTH_LONG).show();
                                 }
                             });
@@ -308,5 +345,20 @@ public class MainActivity extends AppCompatActivity {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
+    }
+
+    boolean isBackButtonPressed = false;
+
+    @Override
+    public void onBackPressed() {
+        if (isBackButtonPressed){
+
+            super.onBackPressed();
+            return;
+        }
+
+        this.isBackButtonPressed  = true;
+        Toast.makeText(MainActivity.this,"Press bak again to exit!!",Toast.LENGTH_LONG).show();
+
     }
 }

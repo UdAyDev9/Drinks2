@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml:17:2-22:12
+INJECTED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml:17:2-22:12
+INJECTED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml:17:2-22:12
+	package
+		ADDED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml:18:5-40
+		INJECTED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml
+		INJECTED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml:17:12-70
+uses-sdk
+INJECTED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml
+INJECTED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml
+INJECTED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml
+INJECTED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml
+		ADDED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml
+		INJECTED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml
+		ADDED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml
+		INJECTED from D:\UdAy9\Drinks\aFileChooser\src\main\AndroidManifest.xml
